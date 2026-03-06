@@ -29,8 +29,7 @@ dance_bp = Blueprint("dance", __name__)
 
 @dance_bp.route("/simple/list", methods=["GET"])
 def dance_list():
-    body = {"action_list": dance_map.keys()}
-    return jsonify(body)
+    return jsonify(list(dance_map.keys()))
 
 @dance_bp.route("/simple/action", methods=["POST"])
 def dance_action():
@@ -45,8 +44,7 @@ def dance_action():
 
 @dance_bp.route("/wholebody/list", methods=["GET"])
 def wholebody_dance_list():
-    body = {"action_list": dance_map.keys()}
-    return jsonify(body)
+    return jsonify(list(whole_body_dance_map.keys()))
 
 @dance_bp.route("/wholebody/action", methods=["POST"])
 def wholebody_dance_action():
